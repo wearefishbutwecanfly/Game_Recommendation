@@ -17,9 +17,9 @@
       type="text/javascript"
       src="{{ url_for('static', filename='js/jquery-func.js') }}"
     ></script>
-    <!--[if IE 6
-      ]><link rel="stylesheet" href="css/ie6.css" type="text/css" media="all"
-    /><![endif]-->
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='slick/slick.css') }}"/>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='slick/slick-theme.css') }}"/>
+
   </head>
   <body>
     <!-- START PAGE SOURCE -->
@@ -82,10 +82,11 @@
             <h2>GAME HAVE SIMILAR CONTENT</h2>
             <p class="text-right"><a href="#">See all</a></p>
           </div>
-          {%for i in list1%}
+          <div class="movie_slider" data-slick='{"slidesToShow": 4, "slidesToScroll": 4}'>
+          {%for i in list_game_recommend%}
           <div class="movie">
             <div class="movie-image">
-              <a href="https://youtu.be/dQw4w9WgXcQ">
+              <a href="{{ url_for('detail', game_id = df["Game_id"].iloc[i])}}">
                 <span class="play"
                   ><span class="name">{{df["Game_name"].iloc[i]}}</span></span
                 >
@@ -97,15 +98,17 @@
             </div>
           </div>
           {%endfor%}
+        </div>
           <div class="box">
             <div class="head">
               <h2>GAME FOR USER</h2>
               <p class="text-right"><a href="#">See all</a></p>
             </div>
+            <div class="movie_slider" data-slick='{"slidesToShow": 4, "slidesToScroll": 4}'>
             {%for i in list2%}
             <div class="movie">
               <div class="movie-image">
-                <a href="https://youtu.be/dQw4w9WgXcQ">
+                <a href="{{ url_for('detail', game_id = df["Game_id"].iloc[i])}}">
                   <span class="play"
                     ><span class="name">{{df["Game_name"].iloc[i]}}</span></span
                   >
@@ -117,9 +120,17 @@
               </div>
             </div>
             {%endfor%}
+          </div>
         </div>
       </div>
     </div>
     <!-- END PAGE SOURCE -->
+
+    <script type="text/javascript" src="{{ url_for('static', filename='js/slider-func.js') }}"></script>
+    <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='slick/slick.min.js') }}"></script>
+
+
   </body>
 </html>

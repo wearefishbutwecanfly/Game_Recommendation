@@ -17,6 +17,9 @@
       type="text/javascript"
       src="{{ url_for('static', filename='js/jquery-func.js') }}"
     ></script>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='slick/slick.css') }}"/>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='slick/slick-theme.css') }}"/>
+    
     <!--[if IE 6
       ]><link rel="stylesheet" href="css/ie6.css" type="text/css" media="all"
     /><![endif]-->
@@ -25,7 +28,11 @@
     <!-- START PAGE SOURCE -->
     <div id="shell">
       <div id="header">
-        <!-- <h1 id="logo"><a href="#">Game Recommendation</a></h1> -->
+        <div class="top_image">
+          <img src="{{url_for('static', filename='css/images/gamelogo.gif')}}"/>
+          <p>GAME RECOMMENDATION</p>
+        </div>
+        
         <!-- <div class="social">
           <span>FOLLOW US ON:</span>
           <ul>
@@ -34,8 +41,8 @@
             <li><a class="vimeo" href="#">vimeo</a></li>
             <li><a class="rss" href="#">rss</a></li>
           </ul>
-        </div> -->
-        <!-- <div id="navigation">
+        </div>
+        <div id="navigation">
           <ul>
             <li><a class="active" href="#">HOME</a></li>
             <li><a href="#">NEWS</a></li>
@@ -74,70 +81,84 @@
               <h2>TOP RATING GAME</h2>
               <p class="text-right"><a href="#">See all</a></p>
             </div>
-            {%for i in range(0,10)%}
+            <div class="movie_slider" data-slick='{"slidesToShow": 4, "slidesToScroll": 4}'>
+            {%for i in range(0,20)%}
             <div class="movie">
               <div class="movie-image">
-                <a href="{{ url_for('detail', game_id = top10_Rating["Game_id"].iloc[i])}}"
+                <a href="{{ url_for('detail', game_id = top_Rating["Game_id"].iloc[i])}}"
                   >
-                  <span class="play"><span class="name">{{top10_Rating["Game_name"].iloc[i]}}</span></span>
+                  <span class="play"><span class="name">{{top_Rating["Game_name"].iloc[i]}}</span></span>
                   <img
-                    src={{top10_Rating["Image_Link"].iloc[i]}}
+                    src={{top_Rating["Image_Link"].iloc[i]}}
                     alt=""
                 />
               </a>
               </div>
               <div class="rating">
-                <p>RATING {{top10_Rating["Rating"].iloc[i] + " %"}}</p>
+                <p>RATING {{top_Rating["Rating"].iloc[i] + " %"}}</p>
               </div>
             </div>
             {%endfor%}
+          </div>
           </div>
           <div class="box">
             <div class="head">
               <h2>TOP GAME BY POSITIVE SCORE</h2>
               <p class="text-right"><a href="#">See all</a></p>
             </div>
-            {%for i in range(0,10)%}
+            <div class="movie_slider" data-slick='{"slidesToShow": 4, "slidesToScroll": 4}'>
+            {%for i in range(0,20)%}
             <div class="movie">
               <div class="movie-image">
-                <a href="{{ url_for('detail', game_id = top10_positive["Game_id"].iloc[i])}}"
+                <a href="{{ url_for('detail', game_id = top_positive["Game_id"].iloc[i])}}"
                   >
-                  <span class="play"><span class="name">{{top10_positive["Game_name"].iloc[i]}}</span></span>
+                  <span class="play"><span class="name">{{top_positive["Game_name"].iloc[i]}}</span></span>
                   <img
-                    src={{top10_positive["Image_Link"].iloc[i]}}
+                    src={{top_positive["Image_Link"].iloc[i]}}
                     alt=""
                 /></a>
               </div>
               <div class="rating">
-                <p>POSITIVE RATING {{top10_positive["positive"].iloc[i]}}</p>
+                <p>POSITIVE RATING {{top_positive["positive"].iloc[i]}}</p>
               </div>
             </div>
             {%endfor%}
+          </div>
           </div>
           <div class="box">
             <div class="head">
               <h2>TOP GAME PLAYER PLAY MOST</h2>
               <p class="text-right"><a href="#">See all</a></p>
             </div>
-            {%for i in range(0,10)%}
+            <div class="movie_slider" data-slick='{"slidesToShow": 4, "slidesToScroll": 4}'>
+            {%for i in range(0,20)%}
             <div class="movie">
               <div class="movie-image">
-                <a href="{{ url_for('detail', game_id = top10_positive["Game_id"].iloc[i])}}"
+                <a href="{{ url_for('detail', game_id = top_forever["Game_id"].iloc[i])}}"
                   >
-                  <span class="play"><span class="name">{{top10_forever["Game_name"].iloc[i]}}</span></span>
+                  <span class="play"><span class="name">{{top_forever["Game_name"].iloc[i]}}</span></span>
                   <img
-                    src={{top10_forever["Image_Link"].iloc[i]}}
+                    src={{top_forever["Image_Link"].iloc[i]}}
                     alt=""
                 /></a>
               </div>
               <div class="rating">
-                <p>RATING {{top10_forever["Rating"].iloc[i] + " %"}}</p>
+                <p>RATING {{top_forever["Rating"].iloc[i] + " %"}}</p>
               </div>
             </div>
             {%endfor%}
           </div>
+          </div>
         </div>
     </div>
     <!-- END PAGE SOURCE -->
+
+  <script type="text/javascript" src="{{ url_for('static', filename='js/slider-func.js') }}"></script>
+  <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+  <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+  <script type="text/javascript" src="{{ url_for('static', filename='slick/slick.min.js') }}"></script>
+  
+
+
   </body>
 </html>

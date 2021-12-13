@@ -1,7 +1,16 @@
+@font-face {
+  font-family: Aquire;
+  src: url("fonts/Aquire-BW0ox.otf");
+}
 * {
   margin: 0;
   padding: 0;
   outline: 0;
+}
+:root {
+  --img-width: 276px;
+  --img-height: 129px;
+  --shell-width: 1104px;
 }
 body {
   font-size: 12px;
@@ -57,7 +66,7 @@ textarea {
   text-align: right;
 }
 h2 {
-  font-size: 10px;
+  font-size: 15px;
   color: #f2a223;
   font-weight: bold;
 }
@@ -72,11 +81,29 @@ h4 {
   font-weight: bold;
 }
 #shell {
-  width: 980px;
+  width: var(--shell-width);
   margin: 0 auto;
 }
 #header {
   position: relative;
+}
+.top_image {
+  display: flex;
+  align-items: center;
+}
+.top_image img {
+  width: 10%;
+  height: 10%;
+  /* display: block;
+  margin-left: auto;
+  margin-right: auto; */
+}
+.top_image p {
+  font-family: "Aquire";
+  /* font-weight: bold; */
+  color: #fff;
+  font-size: 30px;
+  padding-left: 20px;
 }
 
 #sub-navigation {
@@ -137,12 +164,12 @@ h4 {
 }
 
 .box {
-  width: 980px;
+  width: var(--shell-width);
   border-bottom: 1px dashed #413e3e;
-  padding-bottom: 230px;
+  padding-bottom: 20px;
 }
 .box .head {
-  width: 980px;
+  width: var(--shell-width);
   padding-top: 14px;
   padding-bottom: 11px;
 }
@@ -151,25 +178,25 @@ h4 {
   display: inline;
 }
 .box .movie {
-  width: 184px;
+  width: var(--img-width);
   float: left;
   padding-right: 12px;
 }
 .movie-image {
   float: left;
-  width: 184px;
-  height: 86px;
+  width: var(--img-width);
+  height: var(--img-height);
   position: relative;
 }
 .movie-image img {
-  width: 184px;
-  height: 86px;
+  width: var(--img-width);
+  height: var(--img-height);
 }
 .movie-image a {
   float: left;
   display: inline;
-  width: 184px;
-  height: 86px;
+  width: var(--img-width);
+  height: var(--img-height);
   position: relative;
   z-index: 2;
 }
@@ -177,9 +204,9 @@ h4 {
   position: absolute;
   top: 0;
   left: 0;
-  width: 184px;
-  height: 86px;
-  background: url("images/Shadow2.png");
+  width: var(--img-width);
+  height: var(--img-height);
+  background: url("images/276Shadow.png");
   display: block;
   z-index: 5;
   cursor: pointer;
@@ -188,9 +215,9 @@ h4 {
 .movie span.name {
   font-weight: bold;
   color: #fff;
-  font-size: 14px;
+  font-size: 18px;
   text-align: center;
-  padding-top: 50px;
+  padding-top: 100px;
   display: block;
 }
 .box .last {
@@ -203,7 +230,7 @@ h4 {
 }
 .rating p {
   float: left;
-  font-size: 10px;
+  font-size: 12px;
   color: #fff;
   font-weight: bold;
 }
