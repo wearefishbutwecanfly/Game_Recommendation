@@ -20,7 +20,7 @@ def home():
 @app.route("/detail/<game_id>",methods=['GET', 'POST'])
 def detail(game_id):
     game_index = df[df["Game_id"]==int(game_id)].index[0]
-    list2 = random.sample(range(19974), 20)
+    list2 = random.sample(range(19233), 20)
     game_detail = df.loc[df["Game_id"]==int(game_id)].squeeze()
     list_game_recommend = content_based_recommend(game_index, 20)
 
