@@ -1,5 +1,5 @@
 $(document).ready(function () {
-  $(".movie_slider").slick({
+  $(".game_slider").slick({
     infinite: false,
   });
 });
