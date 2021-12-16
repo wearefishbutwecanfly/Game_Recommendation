@@ -98,10 +98,10 @@
             <h2>GAME HAVE SIMILAR CONTENT</h2>
             <p class="text-right"><a href="#">See all</a></p>
           </div>
-          <div class="movie_slider" data-slick='{"slidesToShow": 4, "slidesToScroll": 4}'>
+          <div class="game_slider" data-slick='{"slidesToShow": 4, "slidesToScroll": 4}'>
           {%for i in list_game_recommend%}
-          <div class="movie">
-            <div class="movie-image">
+          <div class="game">
+            <div class="game-image">
               <a href="{{ url_for('views.detail', game_id = df["Game_id"].iloc[i])}}">
                 <span class="play"
                   ><span class="name">{{df["Game_name"].iloc[i]}}</span></span
@@ -120,10 +120,10 @@
               <h2>IF YOU LIKE THIS GAME YOU MIGHT LIKE THESE</h2>
               <p class="text-right"><a href="#">See all</a></p>
             </div>
-            <div class="movie_slider" data-slick='{"slidesToShow": 4, "slidesToScroll": 4}'>
+            <div class="game_slider" data-slick='{"slidesToShow": 4, "slidesToScroll": 4}'>
             {%for i in list_game_hybrid%}
-            <div class="movie">
-              <div class="movie-image">
+            <div class="game">
+              <div class="game-image">
                 <a href="{{ url_for('views.detail', game_id = df["Game_id"].iloc[i])}}">
                   <span class="play"
                     ><span class="name">{{df["Game_name"].iloc[i]}}</span></span

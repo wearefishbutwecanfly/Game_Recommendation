@@ -34,7 +34,7 @@
       <div id="header">
         <div id="user-information">
           <p class="text-right">Hi {{user_name}}</p>
-          <p class="text-right">Choose your suitable movie</p>
+          <p class="text-right">Choose your suitable game</p>
           <p class="text-right">
             <button class="logout">
               <a href="{{ url_for('views.logout')}}">LOGOUT</a>
@@ -95,10 +95,10 @@
               <h2>TOP RATING GAME</h2>
               <p class="text-right"><a href="#">See all</a></p>
             </div>
-            <div class="movie_slider" data-slick='{"slidesToShow": 4, "slidesToScroll": 4}'>
+            <div class="game_slider" data-slick='{"slidesToShow": 4, "slidesToScroll": 4}'>
             {%for i in range(0,20)%}
-            <div class="movie">
-              <div class="movie-image">
+            <div class="game">
+              <div class="game-image">
                 <a href="{{ url_for('views.detail', game_id = top_Rating["Game_id"].iloc[i])}}"
                   >
                   <span class="play"><span class="name">{{top_Rating["Game_name"].iloc[i]}}</span></span>
@@ -120,10 +120,10 @@
               <h2>RECOMMEND FOR USER</h2>
               <p class="text-right"><a href="#">See all</a></p>
             </div>
-            <div class="movie_slider" data-slick='{"slidesToShow": 4, "slidesToScroll": 4}'>
+            <div class="game_slider" data-slick='{"slidesToShow": 4, "slidesToScroll": 4}'>
             {%for i in range(0,20)%}
-            <div class="movie">
-              <div class="movie-image">
+            <div class="game">
+              <div class="game-image">
                 <a href="{{ url_for('views.detail', game_id = user_recommend["Game_id"].iloc[i])}}"
                   >
                   <span class="play"><span class="name">{{user_recommend["Game_name"].iloc[i]}}</span></span>
@@ -145,10 +145,10 @@
               <h2>TOP GAME BY POSITIVE SCORE</h2>
               <p class="text-right"><a href="#">See all</a></p>
             </div>
-            <div class="movie_slider" data-slick='{"slidesToShow": 4, "slidesToScroll": 4}'>
+            <div class="game_slider" data-slick='{"slidesToShow": 4, "slidesToScroll": 4}'>
             {%for i in range(0,20)%}
-            <div class="movie">
-              <div class="movie-image">
+            <div class="game">
+              <div class="game-image">
                 <a href="{{ url_for('views.detail', game_id = top_positive["Game_id"].iloc[i])}}"
                   >
                   <span class="play"><span class="name">{{top_positive["Game_name"].iloc[i]}}</span></span>
@@ -169,10 +169,10 @@
               <h2>TOP GAME PLAYER PLAY MOST</h2>
               <p class="text-right"><a href="#">See all</a></p>
             </div>
-            <div class="movie_slider" data-slick='{"slidesToShow": 4, "slidesToScroll": 4}'>
+            <div class="game_slider" data-slick='{"slidesToShow": 4, "slidesToScroll": 4}'>
             {%for i in range(0,20)%}
-            <div class="movie">
-              <div class="movie-image">
+            <div class="game">
+              <div class="game-image">
                 <a href="{{ url_for('views.detail', game_id = top_forever["Game_id"].iloc[i])}}"
                   >
                   <span class="play"><span class="name">{{top_forever["Game_name"].iloc[i]}}</span></span>

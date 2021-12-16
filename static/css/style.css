@@ -192,22 +192,22 @@ h4 {
   float: left;
   display: inline;
 }
-.box .movie {
+.box .game {
   width: var(--img-width);
   float: left;
   padding-right: 12px;
 }
-.movie-image {
+.game-image {
   float: left;
   width: var(--img-width);
   height: var(--img-height);
   position: relative;
 }
-.movie-image img {
+.game-image img {
   width: var(--img-width);
   height: var(--img-height);
 }
-.movie-image a {
+.game-image a {
   float: left;
   display: inline;
   width: var(--img-width);
@@ -227,7 +227,7 @@ h4 {
   cursor: pointer;
   display: none;
 }
-.movie span.name {
+.game span.name {
   font-weight: bold;
   color: #fff;
   font-size: 18px;
