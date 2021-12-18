@@ -186,7 +186,7 @@ h4 {
 .box .head {
   width: var(--shell-width);
   padding-top: 14px;
-  padding-bottom: 11px;
+  padding-bottom: 30px;
 }
 .box .head h2 {
   float: left;
@@ -240,7 +240,7 @@ h4 {
 }
 .rating {
   float: left;
-  width: 152px;
+  width: 200px;
   padding-top: 8px;
 }
 .rating p {
