@@ -14,6 +14,6 @@ class User(db.Model):
 class Rating(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     user_id = db.Column(db.Integer, db.ForeignKey(User.id))
-    game_id = db.Column(db.Integer, unique=True)
-    game_name = db.Column(db.String, unique=True)
+    game_id = db.Column(db.Integer)
+    game_name = db.Column(db.String)
     rating = db.Column(db.Integer)

@@ -24,6 +24,10 @@ print("Complete traing SVD")
 
 # Tạo hàm SVD function 
 def SVD(User_ID, max_number_predict, max_number_database, database):
+    print("Training SVD")
+    trainset = data.build_full_trainset()
+    svd.fit(trainset)
+    print("Complete traing SVD")
     list_game_content_based = database["Game_name"][:max_number_database]
     df_test = {"User_ID": User_ID,"Game_index":[], "Game_Predict":[],"Est":[]}
     for i in list_game_content_based:

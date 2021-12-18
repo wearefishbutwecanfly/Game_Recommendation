@@ -1,7 +1,7 @@
 from flask import Flask, Blueprint, redirect, url_for, render_template, request, redirect, session
 import pandas as pd
 from content_based import content_based_recommend
-from SVD import SVD, hybrid
+# from SVD import SVD, hybrid
 from models import User, Rating
 from init import db
 import random
@@ -24,12 +24,19 @@ def index():
             for user in users:
                 csv_out.writerow(user)
 
+        from SVD import SVD
         user_name = session.get("username")
         top_Rating = df.sort_values(by = "Rating", ascending = False)[:100]
         top_forever = df.sort_values(by = "average_forever", ascending = False)[:100]
         top_positive = df.sort_values(by=['positive','negative'], ascending = False)[:100]
         user_recommend = df.iloc[SVD(session.get('user_id'),20, 100,top_Rating)['Game_index']]
-        # list2 = random.sample(range(19233), 20)
+        # if request.method =='POST':
+        #     from SVD import SVD
+        #     print('Return the HomePage')
+        #     user_recommend1 = df.iloc[SVD(session.get('user_id'),20, 100,top_Rating)['Game_index']]
+        #     return render_template("home.html", top_Rating= top_Rating, user_recommend = user_recommend1, top_forever=top_forever, top_positive= top_positive, user_name = user_name)
+        # # list2 = random.sample(range(19233), 20)
+        # else:
         return render_template("home.html", top_Rating= top_Rating, user_recommend = user_recommend, top_forever=top_forever, top_positive= top_positive, user_name = user_name)
     else:
         return render_template("index.html")
@@ -73,6 +80,7 @@ def logout():
 #Detail Page
 @views.route("/detail/<game_id>",methods=['GET', 'POST'])
 def detail(game_id):
+    from SVD import hybrid
     user_id = session.get('user_id')
     game_index = int(df[df["Game_id"]==int(game_id)].index[0])
     # list2 = random.sample(range(19233), 20)
