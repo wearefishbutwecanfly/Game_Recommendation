@@ -1,5 +1,5 @@
 ID,User_ID,Game_id,Game_name,Rating
-1,1,427520,Factorio,2
+1,1,427520,Factorio,4
 2,1,1289310,Helltaker,1
 3,1,409850,Criminal Girls Invite Only,3
 4,1,885190,Mahjong Pretty Manga Girls,4
@@ -48,3 +48,7 @@ ID,User_ID,Game_id,Game_name,Rating
 47,1,678520,GalGun VR,1
 48,1,1422610,Aurora,1
 49,1,500570,Mahjong Deluxe 2 Astral Planes,1
+50,1,931270,MicroTown,5
+51,1,860890,Factory Town,4
+52,1,732050,Voxel Tycoon,5
+53,1,249930,ATrain 8,4
