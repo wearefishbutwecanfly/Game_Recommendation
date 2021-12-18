@@ -1,4 +1,9 @@
 # GAME RECOMMENDATION SYSTEM
+![Python](https://upload.wikimedia.org/wikipedia/commons/1/1b/Blue_Python_3.9_Shield_Badge.svg)
+![Flask](https://img.shields.io/badge/flask-v1.1.1-blue)
+![Steam](https://img.shields.io/badge/Steam-000000?style=for-the-badge&logo=steam&logoColor=white)
+![VSCode](https://img.shields.io/badge/Made%20for-VSCode-1f425f.svg)
+
 
 You can read report for more detail about functions and implementation: [link to report](https://docs.google.com/document/d/1zXZVXTK1vfmtwWJcHsbZ1BJ2liK2q2STaIc3XFUC1PA/edit?fbclid=IwAR1f8pU0R8Z7p8ThlSF6UeJfqsVU-FUc1JB8DihSyytc5WKt-GKVtusXsIc#)
 
